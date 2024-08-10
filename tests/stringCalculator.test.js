@@ -16,3 +16,6 @@ test('should return the sum of multiplt comma-separated numbers', () => {
 test('should handle new lines between numbers', () => {
     expect((0, stringCalculator_1.add)('1\n2,3')).toBe(6);
 });
+test('should support different delimiters', () => {
+    expect((0, stringCalculator_1.add)('//;\n1;2')).toBe(3);
+});
