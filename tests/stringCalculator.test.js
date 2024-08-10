@@ -19,3 +19,9 @@ test('should handle new lines between numbers', () => {
 test('should support different delimiters', () => {
     expect((0, stringCalculator_1.add)('//;\n1;2')).toBe(3);
 });
+test('should throw an error for negative numbers', () => {
+    expect(() => (0, stringCalculator_1.add)('1,-2,3')).toThrow('Negative numbers not allowed: -2');
+});
+test('should list all negative numbers in the error message', () => {
+    expect(() => (0, stringCalculator_1.add)('1,-2,-3')).toThrow('Negative numbers not allowed: -2,-3');
+});
